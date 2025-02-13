@@ -21,12 +21,12 @@ h1 {
     font-weight: bold;
     color: #ff1a1a;
     text-shadow: 
-        -4px -4px 6px rgba(0, 0, 0, 0.8),  
-        4px 4px 7px rgba(255, 255, 255, 0.9); 
+        -5px -5px 7px rgba(0, 0, 0, 0.7),  /* เงาดำเข้มขึ้น และมาจากซ้ายบน */
+        4px 4px 6px rgba(255, 255, 255, 0.5); /* ขอบขาวให้ดูนุ่มขึ้น */
     padding: 10px 20px;
     display: inline-block;
     position: relative;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
 
 /* กล่องขาว */
@@ -37,17 +37,30 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 750px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* คำถาม */
-#question {
+#question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px; /* กำหนดความสูงเพื่อให้ข้อความขยับขึ้นได้ */
+    overflow: hidden;
+    position: relative;
+}
+
+.question-line {
     font-size: 2vw;
     color: #444;
-    margin-bottom: 30px;
-    white-space: pre-line;
     text-align: center;
-    min-height: 6em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0;
 }
 
 /* ปุ่ม */
@@ -55,7 +68,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -86,22 +99,10 @@ button:active {
     transform: scale(0.9);
 }
 
-/* ข้อความ "อย่าลืมแคปส่ง" */
+/* ข้อความแคปให้จางลง */
 #hint {
-    font-size: 0.9vw;
-    color: rgba(128, 128, 128, 0.5);
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
+    font-size: 18px;
+    color: rgba(128, 128, 128, 0.6); /* สีเทาจางลง */
+    margin-top: 30px;
     text-align: center;
-}
-
-/* เครดิต */
-#credit {
-    position: relative;
-    bottom: 10px;
-    font-size: 1vw;
-    color: rgba(128, 128, 128, 0.6);
-    margin-top: 10px;
 }
