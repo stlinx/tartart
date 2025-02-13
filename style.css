@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap');
 
 body {
-    background: linear-gradient(to bottom, #ffccdd, #ffffff);
+    background: linear-gradient(to bottom, #660000, #ffffff);
     text-align: center;
     font-family: 'Itim', cursive;
     display: flex;
@@ -18,8 +18,8 @@ h1 {
     font-size: 65px;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #a00000;
-    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    color: #a00000; /* สีแดงเลือด */
+    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); /* เปล่งแสงขาว */
     border: 3px solid rgba(255, 255, 255, 0.8);
     padding: 10px 20px;
     border-radius: 15px;
@@ -30,12 +30,14 @@ h1 {
     transform: translateX(-50%);
 }
 
-/* กล่องขาวใหญ่ขึ้น */
+/* กรอบข้อความ (เหมือนเลือดสาด) */
 .container {
-    background: white;
-    padding: 60px;
+    background: url('https://i.imgur.com/VF4sFxF.png'); /* ใช้ภาพกรอบเลือดจากเน็ต */
+    background-size: cover;
+    background-position: center;
+    padding: 70px;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     width: 90%;
     max-width: 750px;
     position: absolute;
@@ -44,15 +46,13 @@ h1 {
     transform: translate(-50%, -45%);
 }
 
-/* คำถามพร้อมเอฟเฟคพิมพ์ */
+/* คำถาม */
 #question {
     font-size: 34px;
-    color: #444;
+    color: #fff; /* เปลี่ยนเป็นสีขาวให้อ่านง่าย */
     margin-bottom: 30px;
-    opacity: 0;
     white-space: pre-line; /* รองรับการเว้นบรรทัด */
     text-align: center;
-    transition: opacity 0.3s ease-in-out;
 }
 
 /* ปุ่ม */
@@ -81,7 +81,7 @@ button {
 
 /* ปุ่มปฏิเสธ */
 #noBtn {
-    background-color: #dddddd;
+    background-color: #bbbbbb;
     color: black;
 }
 
@@ -96,8 +96,6 @@ button:active {
     font-weight: bold;
     color: #ff3366;
     margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
 /* ข้อความใต้สุด */
