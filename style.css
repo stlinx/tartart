@@ -8,14 +8,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    overflow: hidden;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
 /* หัวข้อ "Would you be my Valentine’s?" */
 h1 {
-    font-size: 70px;
+    font-size: 6vw; /* ปรับขนาดอัตโนมัติตามจอ */
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
     color: #8B0000;
@@ -26,32 +27,26 @@ h1 {
     padding: 10px 20px;
     border-radius: 15px;
     display: inline-block;
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-bottom: 20px;
 }
 
 /* กล่องขาวใหญ่ขึ้น */
 .container {
     background: white;
-    padding: 60px;
+    padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    width: 80%;
     max-width: 750px;
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /* คำถาม */
 #question {
-    font-size: 34px;
+    font-size: 2vw;
     color: #444;
     margin-bottom: 30px;
-    white-space: pre-line; 
+    white-space: pre-line;
     text-align: center;
 }
 
@@ -59,13 +54,14 @@ h1 {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 20px;
+    flex-wrap: wrap; /* ทำให้ปุ่มไม่หลุดจากกล่อง */
+    margin-top: 20px;
 }
 
 button {
-    font-size: 30px;
-    padding: 22px 55px;
+    font-size: 1.5vw;
+    padding: 15px 40px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -90,25 +86,42 @@ button:active {
     transform: scale(0.9);
 }
 
-/* ข้อความตอนจบ */
-#endMessage {
-    font-size: 42px;
-    font-weight: bold;
-    color: #ff3366;
-    margin-top: 20px;
-}
-
-/* ข้อความใต้สุด */
-#hint {
-    font-size: 18px;
+/* เครดิต */
+#credit {
+    position: relative;
+    bottom: 10px;
+    font-size: 1vw;
     color: gray;
     margin-top: 10px;
 }
 
-/* เครดิต */
-#credit {
-    position: fixed;
-    bottom: 10px;
-    font-size: 16px;
-    color: gray;
+/* RESPONSIVE DESIGN สำหรับมือถือและแท็บเล็ต */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 7vw;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 30px;
+    }
+
+    #question {
+        font-size: 3vw;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 4vw;
+        padding: 10px 30px;
+    }
+
+    #credit {
+        font-size: 3vw;
+    }
 }
