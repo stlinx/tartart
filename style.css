@@ -54,8 +54,9 @@ h1 {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    flex-wrap: nowrap;
+    align-items: center;
     margin-top: 5px;
 }
 
