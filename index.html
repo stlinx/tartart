@@ -9,16 +9,6 @@
 </head>
 <body>
 
-    <!-- เพลงพื้นหลัง (ลูปอัตโนมัติ) -->
-    <audio id="bgm" autoplay loop>
-        <source src="bgm.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- เสียงเฮ -->
-    <audio id="cheer">
-        <source src="yay.mp3" type="audio/mpeg">
-    </audio>
-
     <h1>Would you be my Valentine’s?</h1>
 
     <div class="container">
@@ -29,8 +19,13 @@
         </div>
     </div>
 
-    <!-- เอฟเฟคดอกไม้โปรย -->
     <canvas id="confettiCanvas"></canvas>
+
+    <!-- ปุ่มเปิด/ปิด BGM -->
+    <button id="bgmBtn" onclick="toggleBGM()">🔊 เปิด/ปิดเพลง</button>
+    <audio id="bgm" loop>
+        <source src="bgm.mp3" type="audio/mp3">
+    </audio>
 
     <p id="credit">made by @thestlinx</p>
 

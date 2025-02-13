@@ -22,8 +22,14 @@ const noTexts = [
 
 function yesClick() {
     document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️ ฉันจะดูแลเธอให้ดีที่สุด!";
+
     document.getElementById("yesBtn").style.display = "none";
     document.getElementById("noBtn").style.display = "none";
+
+    let hint = document.createElement("p");
+    hint.id = "hint";
+    hint.innerText = "อย่าลืมแคปส่งให้คนที่ส่งเว็บนี้มาด้วยล่ะ\nแต่ถ้าเข้ามาดูด้วยตัวเองก็ไม่เป็นไรนะ เข้าใจๆ";
+    document.querySelector(".container").appendChild(hint);
 
     // เล่นเสียงเฮ
     document.getElementById("cheer").play();
@@ -32,27 +38,6 @@ function yesClick() {
     startConfetti();
 }
 
-function noClick() {
-    let noBtn = document.getElementById("noBtn");
-
-    if (noCount < noMessages.length - 1) {
-        document.getElementById("question").innerHTML = noMessages[noCount];
-        document.getElementById("noBtn").innerHTML = "ไม่ คิดดีแล้ว 😢";
-
-        // ทำให้ปุ่มเล็กลงเรื่อยๆ
-        let currentSize = parseFloat(window.getComputedStyle(noBtn).fontSize);
-        noBtn.style.fontSize = (currentSize * 0.85) + "px";
-        noBtn.style.padding = "8px 15px";
-
-        noCount++;
-    } else {
-        document.getElementById("question").innerHTML = "สุดท้ายเธอก็ต้องเป็นแฟนเราอยู่ดี! 😘";
-        document.getElementById("yesBtn").innerHTML = "เป็นแฟนกัน 💕";
-        document.getElementById("noBtn").innerHTML = "เป็นแฟนกัน 💕";
-    }
-}
-
-// เอฟเฟคดอกไม้โปรย
 function startConfetti() {
     let canvas = document.getElementById("confettiCanvas");
     let ctx = canvas.getContext("2d");
