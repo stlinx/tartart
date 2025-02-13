@@ -25,20 +25,21 @@ function yesClick() {
     let yesBtn = document.getElementById("yesBtn");
     let noBtn = document.getElementById("noBtn");
 
+    // ปิดการ scroll ที่เกิดจากการเปลี่ยนขนาดของปุ่ม
+    document.body.style.overflow = "hidden";
+
     // ซ่อนปุ่มทั้งหมดก่อน
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
 
     // ปรับตำแหน่งข้อความให้ขึ้นตรงกลาง
-    question.style.position = "absolute";
-    question.style.top = "50%";
-    question.style.left = "50%";
-    question.style.transform = "translate(-50%, -50%)";
+    question.style.position = "relative";
+    question.style.top = "-30px"; /* ขยับขึ้น 30px */
 
     // ข้อความตอนจบแบบพิมพ์ทีละตัว
     let finalText = [
         "เย้! เป็นแฟนกันแล้ว ❤️",
-        "มาทำให้เวลานี้ในทุกๆวันที่เราอยู่ด้วยกัน",
+        "มาทำให้จากนี้ในทุกๆวันที่เราอยู่ด้วยกัน",
         "เป็นวันที่เรามีความสุขที่สุดกันนะ!✨"
     ];
 
