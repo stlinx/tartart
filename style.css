@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap');
 
 body {
     background: linear-gradient(to bottom, #ffccdd, #ffffff);
@@ -13,13 +13,17 @@ body {
     overflow: hidden;
 }
 
-/* หัวข้อใหญ่ สไตล์งานแต่ง + แวมไพร์ */
-.title {
+/* หัวข้อ "Would you be my Valentine’s?" */
+h1 {
     font-size: 65px;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #8B0000; /* สีแดงเข้ม */
-    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.9); /* ขอบขาวเปล่งแสง */
+    color: #a00000;
+    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: inline-block;
     position: absolute;
     top: 20px;
     left: 50%;
@@ -31,32 +35,24 @@ body {
     background: white;
     padding: 60px;
     border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 800px;
+    max-width: 750px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -45%);
 }
 
-/* คำถาม */
+/* คำถามพร้อมเอฟเฟคพิมพ์ */
 #question {
-    font-size: 32px;
+    font-size: 34px;
     color: #444;
     margin-bottom: 30px;
-}
-
-/* เอฟเฟคพิมพ์ทีละตัว */
-.typing-effect {
-    display: inline-block;
     opacity: 0;
-    animation: typingFade 0.4s forwards;
-}
-
-@keyframes typingFade {
-    0% { opacity: 0; transform: translateY(5px); }
-    100% { opacity: 1; transform: translateY(0); }
+    white-space: pre-line; /* รองรับการเว้นบรรทัด */
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* ปุ่ม */
@@ -68,30 +64,25 @@ body {
 }
 
 button {
-    font-size: 26px;
-    padding: 20px 60px;
+    font-size: 30px;
+    padding: 22px 55px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    white-space: nowrap;
 }
 
 /* ปุ่ม "เป็นแฟนกัน" */
 #yesBtn {
     background-color: #ff6699;
     color: white;
-    position: relative;
-}
-
-#yesBtn:hover {
-    background-color: #ff3366;
 }
 
 /* ปุ่มปฏิเสธ */
 #noBtn {
     background-color: #dddddd;
     color: black;
-    position: relative;
 }
 
 /* เอฟเฟคกดปุ่ม */
@@ -99,18 +90,27 @@ button:active {
     transform: scale(0.9);
 }
 
-/* เอฟเฟคขยาย/หด */
-@keyframes shrink {
-    to { transform: scale(0) translateY(50px); }
+/* ข้อความตอนจบ */
+#endMessage {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff3366;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
-@keyframes expand {
-    to { transform: scale(1.5) translateY(-20px); }
+
+/* ข้อความใต้สุด */
+#hint {
+    font-size: 18px;
+    color: gray;
+    margin-top: 10px;
 }
 
 /* เครดิต */
 #credit {
     position: fixed;
     bottom: 10px;
-    font-size: 14px;
+    font-size: 16px;
     color: gray;
 }

@@ -1,11 +1,12 @@
+let noCount = 0;
 const noMessages = [
     "สวัสดี เป็นแฟนกับเราไหม 💌",
     "เอ๊ะ! ไม่เป็นจริงๆ หรอ? TT",
     "คิดดีแล้วหรอ? 😭",
-    "แต่ถ้าเป็นแฟนกัน เราจะพาเธอไปกินของอร่อยนะ! 🍰",
-    "เธอจะมีคนให้คอยฟ้องเวลาใครมาแกล้งด้วยนะ",
-    "แถมถ้าเป็นแฟนกันเราให้เธอกอดฟรีได้ทุกวันเลย",
-    "โอเค... คงต้องใช้วิธีสุดท้ายแล้วล่ะ! 😏"
+    "แต่ถ้าเป็นแฟนกัน\nเราจะพาเธอไปกินของอร่อยนะ! 🍰",
+    "เธอจะมีคนให้คอยฟ้อง\nเวลาใครมาแกล้งด้วยนะ",
+    "แถมถ้าเป็นแฟนกัน\nเราให้เธอกอดฟรีได้ทุกวันเลย",
+    "โอเค...\nคงต้องใช้วิธีสุดท้ายแล้วล่ะ! 😏"
 ];
 
 const noTexts = [
@@ -17,31 +18,51 @@ const noTexts = [
     "ก็บอกว่าไม่เป็นไง"
 ];
 
-let noCount = 0;
-
-function typeMessage(text) {
-    const element = document.getElementById("question");
-    element.innerHTML = ""; 
-    [...text].forEach((char, index) => {
-        setTimeout(() => {
-            const span = document.createElement("span");
-            span.textContent = char;
-            span.classList.add("typing-effect");
-            element.appendChild(span);
-        }, index * 50);
-    });
+// เอฟเฟคพิมพ์ข้อความ
+function typeText(text, element, speed = 50) {
+    let i = 0;
+    element.innerHTML = "";
+    element.style.opacity = 1;
+    
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
+    
+    typing();
 }
 
 function yesClick() {
-    typeMessage("เย้! เป็นแฟนกันแล้ว ❤️ หลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน มันจะเป็นวันที่ดีที่สุดเลย!✨");
-    document.getElementById("yesBtn").style.animation = "expand 0.5s forwards";
-    document.getElementById("noBtn").style.animation = "shrink 0.5s forwards";
+    document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️\nหลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน\nมันจะเป็นวันที่ดีที่สุดเลย!✨";
+    
+    document.getElementById("yesBtn").style.display = "none";
+    document.getElementById("noBtn").style.display = "none";
+
+    let hint = document.createElement("p");
+    hint.id = "hint";
+    hint.innerText = "อย่าลืมแคปส่งไปให้คนที่ส่งเว็บนี้ให้ดูด้วยล่ะ\nแต่ถ้าเข้ามาด้วยตัวเองก็ไม่เป็นไรนะ เข้าใจๆ";
+    document.querySelector(".container").appendChild(hint);
+
+    let cheer = new Audio('cheer.mp3');
+    cheer.play();
+
+    startConfetti();
 }
 
 function noClick() {
+    let noBtn = document.getElementById("noBtn");
+    let yesBtn = document.getElementById("yesBtn");
+
     if (noCount < noMessages.length - 1) {
-        typeMessage(noMessages[noCount]);
-        document.getElementById("noBtn").innerHTML = noTexts[noCount];
+        typeText(noMessages[noCount], document.getElementById("question"));
+
+        noBtn.innerHTML = noTexts[noCount];
+        noBtn.style.transform = `scale(${1 - (noCount * 0.2)})`;
+        yesBtn.style.transform = `scale(${1 + (noCount * 0.15)})`;
+        
         noCount++;
     } else {
         yesClick();
