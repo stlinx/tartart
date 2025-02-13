@@ -73,3 +73,30 @@ function yesClick() {
     // เริ่มโปรยดอกไม้
     startConfetti();
 }
+
+function noClick() {
+    let noBtn = document.getElementById("noBtn");
+    let yesBtn = document.getElementById("yesBtn");
+    let question = document.getElementById("question");
+
+    if (noCount < noMessages.length - 1) {
+        question.innerHTML = noMessages[noCount]; // เปลี่ยนคำถาม
+        noBtn.innerHTML = noTexts[noCount]; // เปลี่ยนข้อความปุ่มปฏิเสธ
+
+        // หดปุ่มปฏิเสธ
+        let scaleValue = 1 - (noCount * 0.08); // ลดขนาดทีละ 8%
+        noBtn.style.transform = `scale(${scaleValue})`;
+        noBtn.style.fontSize = `${Math.max(12, 20 - (noCount * 2))}px`; // ลดขนาดฟ้อนท์ป้องกันอ่านไม่ได้
+
+        // ขยายปุ่มตกลง
+        let growValue = 1 + (noCount * 0.05);
+        yesBtn.style.transform = `scale(${growValue})`;
+
+        noCount++;
+    } else {
+        // ข้อความสุดท้าย -> ปิดปุ่มปฏิเสธ
+        question.innerHTML = noMessages[noCount];
+        noBtn.style.display = "none";
+        yesBtn.style.transform = "translateX(0) scale(1.2)";
+    }
+}
