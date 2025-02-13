@@ -16,40 +16,40 @@ function yesClick() {
 
     let i = 0;
     question.innerHTML = ""; // ล้างข้อความเก่า
-    question.style.opacity = "1"; // ให้แน่ใจว่าข้อความแสดง
+    question.style.opacity = "1";
 
     function typeLine(lineIndex) {
-        if (lineIndex >= finalText.length) return; // หยุดเมื่อพิมพ์ครบทุกบรรทัด
+        if (lineIndex >= finalText.length) return;
 
         let text = finalText[lineIndex];
         let j = 0;
         let tempText = "";
-
+        let previousText = question.innerHTML;
+        
         function typing() {
             if (j < text.length) {
                 tempText += text[j];
-                question.innerHTML = tempText;
+                question.innerHTML = previousText + "<br>" + tempText;
                 j++;
-                setTimeout(typing, 50); // ปรับความเร็วพิมพ์ต่ออักษร
+                setTimeout(typing, 50);
             } else {
                 setTimeout(() => {
-                    question.innerHTML += "<br>"; // เว้นบรรทัด
-                    typeLine(lineIndex + 1); // ไปพิมพ์บรรทัดต่อไป
-                }, 500); // หน่วงเวลาก่อนขึ้นบรรทัดใหม่
+                    typeLine(lineIndex + 1);
+                }, 500);
             }
         }
 
         typing();
     }
 
-    typeLine(0); // เริ่มพิมพ์บรรทัดแรก
+    typeLine(0);
 
     // เพิ่มข้อความแคปส่ง
     setTimeout(() => {
         let hint = document.createElement("p");
         hint.id = "hint";
         hint.innerText = "อย่าลืมแคปส่งไปให้คนที่ส่งเว็บนี้ให้ดูด้วยล่ะ\nแต่ถ้าเข้ามาด้วยตัวเองก็ไม่เป็นไรนะ เข้าใจๆ";
-        hint.style.opacity = "0"; // ซ่อนก่อน
+        hint.style.opacity = "0";
         document.querySelector(".container").appendChild(hint);
 
         setTimeout(() => {

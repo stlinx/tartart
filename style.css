@@ -21,8 +21,8 @@ h1 {
     font-weight: bold;
     color: #ff1a1a;
     text-shadow: 
-        -2px -2px 3px rgba(0, 0, 0, 0.5),  
-        2px 2px 5px rgba(255, 255, 255, 0.7); 
+        -4px -4px 6px rgba(0, 0, 0, 0.8),  
+        4px 4px 7px rgba(255, 255, 255, 0.9); 
     padding: 10px 20px;
     display: inline-block;
     position: relative;
@@ -37,6 +37,7 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 750px;
+    position: relative;
 }
 
 /* คำถาม */
@@ -46,6 +47,7 @@ h1 {
     margin-bottom: 30px;
     white-space: pre-line;
     text-align: center;
+    min-height: 6em;
 }
 
 /* ปุ่ม */
@@ -82,6 +84,17 @@ button {
 /* เอฟเฟคกดปุ่ม */
 button:active {
     transform: scale(0.9);
+}
+
+/* ข้อความ "อย่าลืมแคปส่ง" */
+#hint {
+    font-size: 0.9vw;
+    color: rgba(128, 128, 128, 0.5);
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 /* เครดิต */
