@@ -1,60 +1,70 @@
-function typeText(element, text, speed = 50, callback) {
-    let i = 0;
-    function typing() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
-        } else if (callback) {
-            setTimeout(callback, 500);
-        }
-    }
-    typing();
-}
+let noCount = 0;
+const noMessages = [
+    "สวัสดี เป็นแฟนกับเราไหม 💌",
+    "เอ๊ะ! ไม่เป็นจริงๆ หรอ? T T 💔",
+    "คิดดีแล้วหรอ? แบบนั้นเราคงเสียใจแย่เลย",
+    "อันนี้รู้ไหมว่า ถึงกด 'ปฏิเสธ' ไปเรื่อยๆก็แพ้อยู่ดีนะ 🤭",
+    "แต่ถ้าเป็นแฟนเรา เราจะพาเธอไปกินของอร่อยนะ! 🍰",
+    "เธอจะมีคนให้คอยฟ้องเวลาใครมาแกล้งด้วยนะ",
+    "แถมถ้าเป็นแฟนกัน เราให้เธอกอดฟรีได้ทุกวันเลย",
+    "โอเค... คงต้องใช้วิธีสุดท้ายแล้วล่ะ! 😏"
+];
+
+const noTexts = [
+    "ไม่เอา ไม่เป็น",
+    "พูดจริงๆ",
+    "ไม่แน่ใจเท่าไหร่",
+    "ไม่เชื่อ",
+    "ไม่เป็นไร เดี๋ยวซื้อกินเองได้",
+    "โตแล้ว ไม่เป็นไร โอ๋ทำไม",
+    "หมอนข้างก็ทำได้นะ..."
+];
 
 function yesClick() {
-    let questionContainer = document.getElementById("question-container");
+    let question = document.getElementById("question");
     let yesBtn = document.getElementById("yesBtn");
     let noBtn = document.getElementById("noBtn");
 
-    // ซ่อนปุ่ม
+    // ซ่อนปุ่มทั้งหมดก่อน
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
 
-    let messages = [
+    // ข้อความตอนจบแบบพิมพ์ทีละตัว
+    let finalText = [
         "เย้! เป็นแฟนกันแล้ว ❤️",
         "หลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน",
         "มันจะเป็นวันที่ดีที่สุดเลย!✨"
     ];
 
-    let delay = 0;
-    messages.forEach((msg, index) => {
-        setTimeout(() => {
-            let line = document.createElement("p");
-            line.classList.add("question-line");
-            line.style.opacity = "0";
-            line.innerHTML = "";
-            questionContainer.appendChild(line);
+    let i = 0;
+    question.innerHTML = ""; // ล้างข้อความเก่า
+    question.style.opacity = "1";
 
-            typeText(line, msg, 50, () => {
-                line.style.opacity = "1";
-                if (index !== 0) {
-                    questionContainer.childNodes.forEach(node => {
-                        node.style.transform = `translateY(-${index * 35}px)`;
-                    });
-                }
-            });
-        }, delay);
-        delay += msg.length * 50 + 500; // คำนวณดีเลย์เพื่อให้แต่ละข้อความเริ่มทีละบรรทัด
-    });
+    function typeLine(lineIndex) {
+        if (lineIndex >= finalText.length) return;
 
-    // เพิ่มข้อความแคปส่งให้สีเทาและอยู่ล่างสุด
-    setTimeout(() => {
-        let hint = document.createElement("p");
-        hint.id = "hint";
-        hint.innerText = "อย่าลืมแคปให้คนที่ส่งเว็บมาดูด้วยนะ ว่าตอบอะไร\nแต่ถ้าเข้ามาด้วยตัวเองก็ไม่เป็นไรนะ เข้าใจๆ";
-        document.querySelector(".container").appendChild(hint);
-    }, delay + 1000);
+        let text = finalText[lineIndex];
+        let j = 0;
+        let tempText = "";
+        let previousText = question.innerHTML;
+        
+        function typing() {
+            if (j < text.length) {
+                tempText += text[j];
+                question.innerHTML = previousText + "<br>" + tempText;
+                j++;
+                setTimeout(typing, 50);
+            } else {
+                setTimeout(() => {
+                    typeLine(lineIndex + 1);
+                }, 500);
+            }
+        }
+
+        typing();
+    }
+
+    typeLine(0);
 
     // เล่นเสียงเฮ
     let cheer = new Audio('cheer.mp3');
@@ -62,15 +72,4 @@ function yesClick() {
 
     // เริ่มโปรยดอกไม้
     startConfetti();
-}
-
-// ฟังก์ชันเริ่มต้นเอฟเฟคโปรยดอกไม้
-function startConfetti() {
-    const confettiCanvas = document.getElementById("confettiCanvas");
-    confettiCanvas.style.display = "block";
-    confetti({
-        particleCount: 150,
-        spread: 120,
-        origin: { y: 0.6 }
-    });
 }

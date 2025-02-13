@@ -19,14 +19,14 @@ h1 {
     font-size: 6vw;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #aa0e0e;
+    color: #ff1a1a; /* แดงสว่างขึ้น */
     text-shadow: 
-        3px 3px 6px rgba(0, 0, 0, 0.7),  /* เงาดำเข้มขึ้น และมาจากซ้ายบน */
-        0 0 15px rgba(0, 0, 0, 2); /* ขอบขาวให้ดูนุ่มขึ้น */
+        -4px -4px 6px rgba(0, 0, 0, 0.6),  /* เงาดำเข้มขึ้น */
+        4px 4px 6px rgba(255, 255, 255, 0.6); /* เพิ่มความนุ่มนวล */
     padding: 10px 20px;
     display: inline-block;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 60px; /* ขยับขึ้นสูงกว่ากล่องขาว */
 }
 
 /* กล่องขาว */
@@ -37,30 +37,17 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 750px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* คำถาม */
-#question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 120px; /* กำหนดความสูงเพื่อให้ข้อความขยับขึ้นได้ */
-    overflow: hidden;
     position: relative;
 }
 
-.question-line {
+/* คำถาม */
+#question {
     font-size: 2vw;
     color: #444;
+    margin-bottom: 30px;
+    white-space: pre-line;
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    position: absolute;
-    bottom: 0;
+    min-height: 6em;
 }
 
 /* ปุ่ม */
@@ -99,10 +86,13 @@ button:active {
     transform: scale(0.9);
 }
 
-/* ข้อความแคปให้จางลง */
+/* ข้อความ "อย่าลืมแคปส่ง" */
 #hint {
-    font-size: 18px;
-    color: rgba(128, 128, 128, 0.6); /* สีเทาจางลง */
-    margin-top: 30px;
+    font-size: 0.9vw;
+    color: rgba(128, 128, 128, 0.5); /* สีเทาอ่อน */
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
