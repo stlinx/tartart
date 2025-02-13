@@ -1,18 +1,35 @@
 let noCount = 0;
 const noMessages = [
-    "เอ๊ะ! ไม่เป็นจริงๆ หรอ? 🥺",
-    "ลองคิดดูอีกทีนะ! 💕",
+    "สวัสดี เป็นแฟนกับเราไหม 💌",
+    "เอ๊ะ! ไม่เป็นจริงๆ หรอ? TT",
     "คิดดีแล้วหรอ? 😭",
-    "ถ้าเป็นแฟนกัน เราจะพาไปกินของอร่อย! 🍰",
-    "เราให้เธอเลือกของขวัญได้เลย! 🎁",
-    "เป็นแฟนกันแล้วจะได้กอดฟรีทุกวัน! 🤗",
-    "เอาล่ะ... ไม่มีทางเลือกแล้ว! 😏"
+    "แต่ถ้าเป็นแฟนกัน เราจะพาเธอไปกินของอร่อยนะ! 🍰",
+    "เธอจะมีคนให้คอยฟ้องเวลาใครมาแกล้งด้วยนะ",
+    "แถมถ้าเป็นแฟนกันเราให้เธอกอดฟรีได้ทุกวันเลย",
+    "โอเค... คงต้องใช้วิธีสุดท้ายแล้วล่ะ! 😏"
+];
+
+const noTexts = [
+    "ไม่เอา ไม่เป็น",
+    "จริงๆ",
+    "อาจจะล่ะมั้ง",
+    "ไม่เป็นไร ซื้อกินเองได้",
+    "โตแล้วไม่เป็นไร",
+    "ก็บอกว่าไม่เป็นไง"
 ];
 
 function yesClick() {
-    document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️ ฉันจะดูแลเธอให้ดีที่สุด!";
+    document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️ หลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน มันจะเป็นวันที่ดีที่สุดเลย!✨";
+    document.getElementById("question").style.fontSize = "36px";
+    
     document.getElementById("yesBtn").style.display = "none";
     document.getElementById("noBtn").style.display = "none";
+
+    // เพิ่มข้อความแคปส่ง
+    let hint = document.createElement("p");
+    hint.id = "hint";
+    hint.innerText = "อย่าลืมแคปส่งไปให้คนที่ส่งเว็บนี้ให้ดูด้วยล่ะ แต่ถ้าเข้ามาด้วยตัวเองก็ไม่เป็นไรนะ เข้าใจๆ";
+    document.querySelector(".container").appendChild(hint);
 
     // เล่นเสียงเฮ
     let cheer = new Audio('cheer.mp3');
@@ -29,58 +46,22 @@ function noClick() {
     if (noCount < noMessages.length - 1) {
         document.getElementById("question").innerHTML = noMessages[noCount];
 
-        // ทำให้ปุ่ม "ไม่เป็น" เล็กลงเรื่อยๆ
-        let currentSize = parseFloat(window.getComputedStyle(noBtn).fontSize);
-        noBtn.style.fontSize = (currentSize * 0.85) + "px";
-        noBtn.style.padding = "8px 15px";
+        // ปรับข้อความปฏิเสธให้เปลี่ยนไปเรื่อยๆ
+        noBtn.innerHTML = noTexts[noCount];
 
-        // ทำให้ปุ่ม "เป็นแฟน" ใหญ่ขึ้นเรื่อยๆ
-        let yesSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-        yesBtn.style.fontSize = (yesSize * 1.1) + "px";
-        yesBtn.style.padding = "18px 35px";
+        // Shrinking Effect
+        noBtn.style.transform = "scale(0.85)";
 
-        // ขยับปุ่ม "เป็นแฟน" ไปกลางจอเรื่อยๆ
-        yesBtn.style.transform = `translateX(${(noCount + 1) * 10}px)`;
+        // Expanding Effect
+        yesBtn.style.transform = "scale(1.15)";
+
+        // เถิบลงมาให้สมดุล
+        document.querySelector(".buttons").style.marginTop = "50px";
 
         noCount++;
     } else {
         document.getElementById("question").innerHTML = "สุดท้ายเธอก็ต้องเป็นแฟนเราอยู่ดี! 😘";
-        document.getElementById("yesBtn").innerHTML = "เป็นแฟนกัน 💕";
-        document.getElementById("noBtn").style.display = "none";
-        yesBtn.style.transform = "translateX(0px)";
+        document.getElementById("yesBtn").style.transform = "scale(1.2)";
+        noBtn.style.display = "none";
     }
-}
-
-// เอฟเฟคดอกไม้โปรย
-function startConfetti() {
-    let canvas = document.getElementById("confettiCanvas");
-    let ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let confetti = [];
-
-    for (let i = 0; i < 300; i++) {
-        confetti.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 5 + 2,
-            d: Math.random() * 4
-        });
-    }
-
-    function drawConfetti() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "pink";
-        confetti.forEach(c => {
-            ctx.beginPath();
-            ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
-            ctx.fill();
-        });
-
-        confetti.forEach(c => c.y += c.d);
-        requestAnimationFrame(drawConfetti);
-    }
-
-    drawConfetti();
 }
