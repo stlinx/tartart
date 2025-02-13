@@ -16,13 +16,13 @@ body {
 
 /* หัวข้อ "Would you be my Valentine’s?" */
 h1 {
-    font-size: 6vw; /* ปรับขนาดอัตโนมัติตามจอ */
+    font-size: 6vw;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #ff3333;
+    color: #8B0000; /* สีแดงเดิม */
     text-shadow: 
-        -4px -4px 6px rgba(0, 0, 0, 0.9), 
-        4px 4px 8px rgba(255, 50, 50, 0.7);
+        3px 3px 6px rgba(0, 0, 0, 0.6), /* เงาดำ */
+        0 0 15px rgba(255, 255, 255, 0.5); /* Outline สีขาว */
     padding: 10px 20px;
     display: inline-block;
     position: relative;
@@ -48,52 +48,23 @@ h1 {
     text-align: center;
 }
 
+/* ข้อความใต้สุด */
+#hint {
+    font-size: 18px;
+    color: gray; /* เปลี่ยนเป็นสีเทา */
+    margin-top: 10px;
+}
+
 /* ปุ่ม */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* ทำให้ปุ่มไม่หลุดจากกล่อง */
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
-button {
-    font-size: 1.5vw;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
-    white-space: nowrap;
-}
-
-/* ปุ่ม "เป็นแฟนกัน" */
-#yesBtn {
-    background-color: #ff6699;
-    color: white;
-}
-
-/* ปุ่มปฏิเสธ */
-#noBtn {
-    background-color: #dddddd;
-    color: black;
-}
-
-/* เอฟเฟคกดปุ่ม */
-button:active {
-    transform: scale(0.9);
-}
-
-/* เครดิต */
-#credit {
-    position: relative;
-    bottom: 10px;
-    font-size: 1vw;
-    color: gray;
-    margin-top: 10px;
-}
-
-/* RESPONSIVE DESIGN สำหรับมือถือและแท็บเล็ต */
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 7vw;
@@ -112,14 +83,5 @@ button:active {
     .buttons {
         flex-direction: column;
         gap: 10px;
-    }
-
-    button {
-        font-size: 4vw;
-        padding: 10px 30px;
-    }
-
-    #credit {
-        font-size: 3vw;
     }
 }
