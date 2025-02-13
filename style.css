@@ -21,8 +21,8 @@ h1 {
     font-weight: bold;
     color: #aa0e0e;
     text-shadow: 
-        -5px -5px 7px rgba(0, 0, 0, 0.7),  /* เงาดำเข้มขึ้น และมาจากซ้ายบน */
-        4px 4px 6px rgba(255, 255, 255, 0.5); /* ขอบขาวให้ดูนุ่มขึ้น */
+        3px 3px 6px rgba(0, 0, 0, 0.7),  /* เงาดำเข้มขึ้น และมาจากซ้ายบน */
+        0 0 15px rgba(0, 0, 0, 0.8); /* ขอบขาวให้ดูนุ่มขึ้น */
     padding: 10px 20px;
     display: inline-block;
     position: relative;
