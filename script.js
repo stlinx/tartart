@@ -44,19 +44,21 @@ function noClick() {
     if (noCount < noMessages.length - 1) {
         document.getElementById("question").innerHTML = noMessages[noCount];
 
+        if (noCount === 3) {
+            yesBtn.innerHTML = "โอเค งั้นเป็นแฟนกันก็ได้ 😔";
+        } else {
+            yesBtn.innerHTML = "เป็นแฟนกัน 💕";
+        }
+
         noBtn.innerHTML = noTexts[noCount];
-        noBtn.style.transform = `scale(${1 - (noCount * 0.1)})`; // ลดอัตราการหด
+        noBtn.style.transform = `scale(${1 - (noCount * 0.07)})`; /* ลดอัตราการหด */
         yesBtn.style.transform = `scale(${1 + (noCount * 0.05)})`;
 
         noCount++;
     } else {
         document.getElementById("question").innerHTML = noMessages[noCount];
+
         noBtn.style.display = "none";
         yesBtn.style.transform = "translateX(0) scale(1.2)";
     }
-}
-
-function toggleBGM() {
-    let bgm = document.getElementById("bgm");
-    bgm.paused ? bgm.play() : bgm.pause();
 }
