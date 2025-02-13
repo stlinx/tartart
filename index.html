@@ -1,28 +1,127 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Would you be my Valentine’s?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap');
 
-    <h1>Would you be my Valentine’s?</h1>
+body {
+    background: linear-gradient(to bottom, #ffccdd, #ffffff);
+    text-align: center;
+    font-family: 'Itim', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
 
-    <div class="container">
-        <p id="question">สวัสดี เป็นแฟนกับเราไหม 💌</p>
-        <div class="buttons">
-            <button id="yesBtn" onclick="yesClick()">เป็นแฟนกัน 💕</button>
-            <button id="noBtn" onclick="noClick()">ไม่เอา ไม่เป็น</button>
-        </div>
-    </div>
+/* หัวข้อ "Would you be my Valentine’s?" */
+h1 {
+    font-size: 6vw; /* ปรับขนาดอัตโนมัติตามจอ */
+    font-family: 'Great Vibes', cursive;
+    font-weight: bold;
+    color: #8B0000;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.6), 
+        0 0 15px rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
 
-    <canvas id="confettiCanvas"></canvas>
+/* กล่องขาวใหญ่ขึ้น */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 750px;
+}
 
-    <p id="credit">made by @thestlinx</p>
+/* คำถาม */
+#question {
+    font-size: 2vw;
+    color: #444;
+    margin-bottom: 30px;
+    white-space: pre-line;
+    text-align: center;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* ปุ่ม */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* ทำให้ปุ่มไม่หลุดจากกล่อง */
+    margin-top: 20px;
+}
+
+button {
+    font-size: 1.5vw;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+/* ปุ่ม "เป็นแฟนกัน" */
+#yesBtn {
+    background-color: #ff6699;
+    color: white;
+}
+
+/* ปุ่มปฏิเสธ */
+#noBtn {
+    background-color: #dddddd;
+    color: black;
+}
+
+/* เอฟเฟคกดปุ่ม */
+button:active {
+    transform: scale(0.9);
+}
+
+/* เครดิต */
+#credit {
+    position: relative;
+    bottom: 10px;
+    font-size: 1vw;
+    color: gray;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN สำหรับมือถือและแท็บเล็ต */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 7vw;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 30px;
+    }
+
+    #question {
+        font-size: 3vw;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 4vw;
+        padding: 10px 30px;
+    }
+
+    #credit {
+        font-size: 3vw;
+    }
+}
