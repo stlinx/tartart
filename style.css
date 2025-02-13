@@ -22,8 +22,6 @@ h1 {
     color: #aa0e0e;
     text-shadow: 
         3px 3px 6px rgba(0, 0, 0, 0.7),  /* เงาดำเข้มขึ้น และมาจากซ้ายบน */
-        0 0 15px rgba(0, 0, 0, 0.8); /* ขอบขาวให้ดูนุ่มขึ้น */
-    padding: 10px 20px;
     display: inline-block;
     position: relative;
     margin-bottom: 40px;
