@@ -19,9 +19,9 @@ h1 {
     font-size: 6vw;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #ff1a1a; /* แดงสว่างขึ้น */
+    color: #810000; /* แดงสว่างขึ้น */
     text-shadow: 
-        -4px -4px 6px rgba(0, 0, 0, 0.6),  /* เงาดำเข้มขึ้น */
+        4px 4px 6px rgba(0, 0, 0, 0.6),  /* เงาดำเข้มขึ้น */
         4px 4px 6px rgba(255, 255, 255, 0.6); /* เพิ่มความนุ่มนวล */
     padding: 10px 20px;
     display: inline-block;
