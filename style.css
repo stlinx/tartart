@@ -21,15 +21,15 @@ h1 {
     font-weight: bold;
     color: #ff1a1a; /* แดงสว่างขึ้น */
     text-shadow: 
-        -4px -4px 6px rgba(0, 0, 0, 0.6),  /* เงาดำเข้มขึ้น */
-        4px 4px 6px rgba(255, 255, 255, 0.6); /* เพิ่มความนุ่มนวล */
+        -3px -3px 4px rgba(0, 0, 0, 0.8),  /* เงาดำเข้ม */
+        3px 3px 6px rgba(255, 255, 255, 0.5); /* Outline สีขาวนุ่ม */
     padding: 10px 20px;
     display: inline-block;
     position: relative;
-    margin-bottom: 60px; /* ขยับขึ้นสูงกว่ากล่องขาว */
+    margin-bottom: 20px;
 }
 
-/* กล่องขาว */
+/* กล่องขาวใหญ่ขึ้น */
 .container {
     background: white;
     padding: 40px;
@@ -37,7 +37,6 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 750px;
-    position: relative;
 }
 
 /* คำถาม */
@@ -47,7 +46,6 @@ h1 {
     margin-bottom: 30px;
     white-space: pre-line;
     text-align: center;
-    min-height: 6em;
 }
 
 /* ปุ่ม */
@@ -55,7 +53,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* ทำให้ปุ่มไม่หลุดจากกล่อง */
     margin-top: 20px;
 }
 
@@ -86,13 +84,11 @@ button:active {
     transform: scale(0.9);
 }
 
-/* ข้อความ "อย่าลืมแคปส่ง" */
-#hint {
-    font-size: 0.9vw;
-    color: rgba(128, 128, 128, 0.5); /* สีเทาอ่อน */
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+/* เครดิต */
+#credit {
+    position: relative;
+    bottom: 10px;
+    font-size: 1vw;
+    color: gray;
+    margin-top: 10px;
 }
