@@ -13,16 +13,13 @@ body {
     overflow: hidden;
 }
 
-/* หัวข้อใหญ่สไตล์งานแต่ง */
+/* หัวข้อใหญ่ สไตล์งานแต่ง + แวมไพร์ */
 .title {
-    font-size: 60px;
+    font-size: 65px;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #8B0000;
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-    border: 3px solid #8B0000;
-    padding: 15px 30px;
-    border-radius: 15px;
+    color: #8B0000; /* สีแดงเข้ม */
+    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.9); /* ขอบขาวเปล่งแสง */
     position: absolute;
     top: 20px;
     left: 50%;
@@ -48,18 +45,17 @@ body {
     font-size: 32px;
     color: #444;
     margin-bottom: 30px;
-    white-space: nowrap;
 }
 
 /* เอฟเฟคพิมพ์ทีละตัว */
 .typing-effect {
     display: inline-block;
     opacity: 0;
-    animation: typingFade 0.5s forwards;
+    animation: typingFade 0.4s forwards;
 }
 
 @keyframes typingFade {
-    0% { opacity: 0; transform: translateY(10px); }
+    0% { opacity: 0; transform: translateY(5px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
@@ -67,23 +63,24 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
     margin-top: 40px;
 }
 
 button {
-    font-size: 28px;
-    padding: 20px 50px;
+    font-size: 26px;
+    padding: 20px 60px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 /* ปุ่ม "เป็นแฟนกัน" */
 #yesBtn {
     background-color: #ff6699;
     color: white;
+    position: relative;
 }
 
 #yesBtn:hover {
@@ -94,18 +91,20 @@ button {
 #noBtn {
     background-color: #dddddd;
     color: black;
+    position: relative;
 }
 
-#noBtn:hover {
-    background-color: #bbbbbb;
+/* เอฟเฟคกดปุ่ม */
+button:active {
+    transform: scale(0.9);
 }
 
 /* เอฟเฟคขยาย/หด */
 @keyframes shrink {
-    to { transform: scale(0); }
+    to { transform: scale(0) translateY(50px); }
 }
 @keyframes expand {
-    to { transform: scale(1.5); }
+    to { transform: scale(1.5) translateY(-20px); }
 }
 
 /* เครดิต */
