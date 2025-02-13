@@ -40,6 +40,7 @@ function yesClick() {
         bgm.play();
     }
 
+    // เอฟเฟคโปรยดอกไม้
     startConfetti();
 }
 
