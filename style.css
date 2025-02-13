@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
 body {
-    background: linear-gradient(to bottom, #660000, #ffffff);
+    background: linear-gradient(to bottom, #ffccdd, #ffffff);
     text-align: center;
     font-family: 'Itim', cursive;
     display: flex;
@@ -15,11 +15,13 @@ body {
 
 /* หัวข้อ "Would you be my Valentine’s?" */
 h1 {
-    font-size: 65px;
-    font-family: 'Great Vibes', cursive;
+    font-size: 70px;
+    font-family: 'UnifrakturCook', cursive;
     font-weight: bold;
-    color: #a00000; /* สีแดงเลือด */
-    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); /* เปล่งแสงขาว */
+    color: #a00000; /* แดงเลือดแวมไพร์ */
+    text-shadow: 
+        4px 4px 6px rgba(255, 255, 255, 0.9), /* Outline ขาว */
+        0 0 20px rgba(255, 255, 255, 0.7);
     border: 3px solid rgba(255, 255, 255, 0.8);
     padding: 10px 20px;
     border-radius: 15px;
@@ -30,14 +32,12 @@ h1 {
     transform: translateX(-50%);
 }
 
-/* กรอบข้อความ (เหมือนเลือดสาด) */
+/* กล่องขาวใหญ่ขึ้น */
 .container {
-    background: url('https://i.imgur.com/VF4sFxF.png'); /* ใช้ภาพกรอบเลือดจากเน็ต */
-    background-size: cover;
-    background-position: center;
-    padding: 70px;
+    background: white;
+    padding: 60px;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 750px;
     position: absolute;
@@ -49,9 +49,9 @@ h1 {
 /* คำถาม */
 #question {
     font-size: 34px;
-    color: #fff; /* เปลี่ยนเป็นสีขาวให้อ่านง่าย */
+    color: #444;
     margin-bottom: 30px;
-    white-space: pre-line; /* รองรับการเว้นบรรทัด */
+    white-space: pre-line;
     text-align: center;
 }
 
@@ -81,7 +81,7 @@ button {
 
 /* ปุ่มปฏิเสธ */
 #noBtn {
-    background-color: #bbbbbb;
+    background-color: #dddddd;
     color: black;
 }
 

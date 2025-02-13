@@ -18,23 +18,6 @@ const noTexts = [
     "ก็บอกว่าไม่เป็นไง"
 ];
 
-// เอฟเฟคพิมพ์ข้อความ
-function typeText(text, element, speed = 50) {
-    let i = 0;
-    element.innerHTML = "";
-    element.style.opacity = 1;
-    
-    function typing() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
-        }
-    }
-    
-    typing();
-}
-
 function yesClick() {
     document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️\nหลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน\nมันจะเป็นวันที่ดีที่สุดเลย!✨";
     
@@ -57,12 +40,17 @@ function noClick() {
     let yesBtn = document.getElementById("yesBtn");
 
     if (noCount < noMessages.length - 1) {
-        typeText(noMessages[noCount], document.getElementById("question"));
+        document.getElementById("question").innerHTML = noMessages[noCount];
 
         noBtn.innerHTML = noTexts[noCount];
-        noBtn.style.transform = `scale(${1 - (noCount * 0.2)})`;
-        yesBtn.style.transform = `scale(${1 + (noCount * 0.15)})`;
-        
+
+        if (noCount < noMessages.length - 2) {
+            noBtn.style.transform = `scale(${1 - (noCount * 0.1)})`;
+            noBtn.style.fontSize = `${30 - (noCount * 3)}px`;
+        }
+
+        yesBtn.style.transform = `scale(${1 + (noCount * 0.1)})`;
+
         noCount++;
     } else {
         yesClick();
