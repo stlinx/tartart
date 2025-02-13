@@ -20,7 +20,7 @@ const noTexts = [
 
 function yesClick() {
     document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️\nหลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน\nมันจะเป็นวันที่ดีที่สุดเลย!✨";
-    
+
     document.getElementById("yesBtn").style.display = "none";
     document.getElementById("noBtn").style.display = "none";
 
@@ -43,17 +43,15 @@ function noClick() {
         document.getElementById("question").innerHTML = noMessages[noCount];
 
         noBtn.innerHTML = noTexts[noCount];
-
-        if (noCount < noMessages.length - 2) {
-            noBtn.style.transform = `scale(${1 - (noCount * 0.15)})`;
-            yesBtn.style.transform = `scale(${1 + (noCount * 0.1)})`;
-        } else {
-            noBtn.style.display = "none";
-            yesBtn.style.transform = "scale(1.2)";
-        }
+        noBtn.style.transform = `scale(${1 - (noCount * 0.15)})`;
+        yesBtn.style.transform = `scale(${1 + (noCount * 0.1)})`;
 
         noCount++;
     } else {
-        yesClick();
+        document.getElementById("question").innerHTML = noMessages[noCount];
+
+        // คำถามสุดท้าย: ปิดปุ่มปฏิเสธ และให้ปุ่ม "เป็นแฟนกัน" ขยับมากลาง
+        noBtn.style.display = "none";
+        yesBtn.style.transform = "translateX(0) scale(1.2)";
     }
 }
