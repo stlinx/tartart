@@ -45,11 +45,12 @@ function noClick() {
         noBtn.innerHTML = noTexts[noCount];
 
         if (noCount < noMessages.length - 2) {
-            noBtn.style.transform = `scale(${1 - (noCount * 0.1)})`;
-            noBtn.style.fontSize = `${30 - (noCount * 3)}px`;
+            noBtn.style.transform = `scale(${1 - (noCount * 0.15)})`;
+            yesBtn.style.transform = `scale(${1 + (noCount * 0.1)})`;
+        } else {
+            noBtn.style.display = "none";
+            yesBtn.style.transform = "scale(1.2)";
         }
-
-        yesBtn.style.transform = `scale(${1 + (noCount * 0.1)})`;
 
         noCount++;
     } else {

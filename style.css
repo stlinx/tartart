@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap');
 
 body {
     background: linear-gradient(to bottom, #ffccdd, #ffffff);
@@ -16,13 +16,13 @@ body {
 /* หัวข้อ "Would you be my Valentine’s?" */
 h1 {
     font-size: 70px;
-    font-family: 'UnifrakturCook', cursive;
+    font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #a00000; /* แดงเลือดแวมไพร์ */
+    color: #8B0000; /* สีแดงเลือดแวมไพร์ */
     text-shadow: 
-        4px 4px 6px rgba(255, 255, 255, 0.9), /* Outline ขาว */
-        0 0 20px rgba(255, 255, 255, 0.7);
-    border: 3px solid rgba(255, 255, 255, 0.8);
+        3px 3px 6px rgba(0, 0, 0, 0.6), /* เงาดำ */
+        0 0 15px rgba(255, 255, 255, 0.8); /* Outline สีขาว */
+    border: 3px solid rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     border-radius: 15px;
     display: inline-block;
@@ -51,7 +51,7 @@ h1 {
     font-size: 34px;
     color: #444;
     margin-bottom: 30px;
-    white-space: pre-line;
+    white-space: pre-line; /* รองรับการเว้นบรรทัด */
     text-align: center;
 }
 
