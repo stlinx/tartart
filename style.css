@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 body {
     background: linear-gradient(to bottom, #ffccdd, #ffffff);
     text-align: center;
@@ -11,14 +13,20 @@ body {
     overflow: hidden;
 }
 
+/* หัวข้อ "Would you be my Valentine’s?" */
 h1 {
-    font-size: 42px;
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
     font-weight: bold;
-    color: #ff3366;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    color: #a52a2a;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* กล่องขาว */
 .container {
     background: white;
     padding: 40px;
@@ -26,38 +34,81 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 500px;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
 }
 
-p {
-    font-size: 26px;
+/* คำถาม */
+#question {
+    font-size: 30px;
     color: #444;
     margin-bottom: 30px;
     transition: font-size 0.3s ease-in-out;
 }
 
+/* ปุ่ม */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin-top: 30px;
 }
 
 button {
-    font-size: 22px;
-    padding: 15px 30px;
+    font-size: 24px;
+    padding: 20px 40px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
+/* ปุ่ม "เป็นแฟนกัน" */
 #yesBtn {
     background-color: #ff6699;
     color: white;
-    font-size: 22px;
 }
 
 #yesBtn:hover {
     background-color: #ff3366;
-    transform: scale(1.1);
+}
+
+/* ปุ่มปฏิเสธ */
+#noBtn {
+    background-color: #dddddd;
+    color: black;
+}
+
+#noBtn:hover {
+    background-color: #bbbbbb;
+}
+
+/* Shrinking & Expanding Effect */
+button:active {
+    transform: scale(1.2);
+}
+
+/* ข้อความตอนจบ */
+#endMessage {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff3366;
+    margin-top: 20px;
+}
+
+/* ข้อความใต้สุด */
+#hint {
+    font-size: 16px;
+    color: gray;
+    margin-top: 10px;
+}
+
+/* เครดิต */
+#credit {
+    position: fixed;
+    bottom: 10px;
+    font-size: 14px;
+    color: gray;
 }
