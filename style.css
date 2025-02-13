@@ -32,7 +32,7 @@ h1 {
 /* กล่องขาว */
 .container {
     background: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 80%;
@@ -47,7 +47,7 @@ h1 {
     margin-bottom: 5px;
     white-space: pre-line;
     text-align: center;
-    min-height: 6em;
+    min-height: 4em;
 }
 
 /* ปุ่ม */
