@@ -19,10 +19,11 @@ h1 {
     font-size: 6vw;
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #ff4d4d; /* สีแดงสว่างขึ้น */
+    color: #ff1a1a; /* แดงสว่างขึ้น */
     text-shadow: 
-        -3px -3px 4px rgba(0, 0, 0, 0.8),  
-        3px 3px 6px rgba(255, 255, 255, 0.5);
+        -3px -3px 4px rgba(0, 0, 0, 0.8),  /* เงาดำเข้ม */
+        3px 3px 6px rgba(255, 255, 255, 0.5); /* Outline สีขาวนุ่ม */
+    padding: 10px 20px;
     display: inline-block;
     position: relative;
     margin-bottom: 20px;
@@ -52,7 +53,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* ทำให้ปุ่มไม่หลุดจากกล่อง */
     margin-top: 20px;
 }
 
@@ -62,21 +63,20 @@ button {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    white-space: nowrap;
 }
 
-/* ปุ่ม BGM */
-#bgmBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 16px;
-    padding: 10px;
-    background: #ff6699;
+/* ปุ่ม "เป็นแฟนกัน" */
+#yesBtn {
+    background-color: #ff6699;
     color: white;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
+}
+
+/* ปุ่มปฏิเสธ */
+#noBtn {
+    background-color: #dddddd;
+    color: black;
 }
 
 /* เอฟเฟคกดปุ่ม */

@@ -21,7 +21,7 @@ const noTexts = [
 ];
 
 function yesClick() {
-    document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️\nหลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน\nจะเป็นวันที่ดีที่สุดเลย!✨";
+    document.getElementById("question").innerHTML = "เย้! เป็นแฟนกันแล้ว ❤️\nหลังจากนี้ทุกๆวันที่เราอยู่ด้วยกัน\nมันจะเป็นวันที่ดีที่สุดเลย!✨";
 
     document.getElementById("yesBtn").style.display = "none";
     document.getElementById("noBtn").style.display = "none";
