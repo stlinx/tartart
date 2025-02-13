@@ -16,17 +16,16 @@ body {
 
 /* หัวข้อ "Would you be my Valentine’s?" */
 h1 {
-    font-size: 6vw;
-    font-family: 'Great Vibes', cursive;
+    font-size: 6vw;  /* ขนาดอักษรใหญ่ ปรับตามจอ */
+    font-family: 'Great Vibes', cursive; /* ฟอนต์แนว Calligraphy */
     font-weight: bold;
-    color: #ff1a1a; /* แดงสว่างขึ้น */
+    color: #ff0000; /* สีแดงสด */
     text-shadow: 
-        -4px -4px 6px rgba(0, 0, 0, 0.6),  /* เงาดำเข้มขึ้น */
-        4px 4px 6px rgba(255, 255, 255, 0.6); /* เพิ่มความนุ่มนวล */
+        4px 4px 6px rgba(0, 0, 0, 0.8); /* เงาดำ */
     padding: 10px 20px;
     display: inline-block;
     position: relative;
-    margin-bottom: 60px; /* ขยับขึ้นสูงกว่ากล่องขาว */
+    margin-bottom: 60px; /* ให้ห่างจากกล่องขาว */
 }
 
 /* กล่องขาว */
@@ -44,7 +43,7 @@ h1 {
 #question {
     font-size: 2vw;
     color: #444;
-    margin-bottom: 15px;
+    margin-bottom: 0115px;
     white-space: pre-line;
     text-align: center;
     min-height: 6em;
