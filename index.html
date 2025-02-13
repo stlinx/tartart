@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- BGM เพลงรักหวานๆ -->
+    <audio id="bgm" autoplay loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="container">
-        <h1>เป็นแฟนกันไหม? :sparkling_heart:</h1>
-        <p id="question">ฉันชอบเธอนะ :heart: อยากเป็นแฟนกันไหม?</p>
+        <h1>เป็นแฟนกันไหม? 💖</h1>
+        <p id="question">ฉันชอบเธอนะ ❤️ อยากเป็นแฟนกันไหม?</p>
         <div class="buttons">
-            <button id="yesBtn" onclick="yesClick()">เป็นแฟนกัน :two_hearts:</button>
-            <button id="noBtn" onclick="noClick()">ไม่เป็น :cry:</button>
+            <button id="yesBtn" onclick="yesClick()">เป็นแฟนกัน 💕</button>
+            <button id="noBtn" onclick="noClick()">ไม่เป็น 😢</button>
         </div>
     </div>
+
+    <!-- เอฟเฟคดอกไม้โปรย -->
+    <canvas id="confettiCanvas"></canvas>
 
     <script src="script.js"></script>
 </body>

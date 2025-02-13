@@ -3,61 +3,61 @@ body {
     text-align: center;
     font-family: 'Itim', cursive;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff3366;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .container {
     background: white;
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 400px;
-}
-
-h1 {
-    font-size: 28px;
-    color: #ff6699;
+    max-width: 500px;
+    position: relative;
 }
 
 p {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 26px;
+    color: #444;
+    margin-bottom: 30px;
+    transition: font-size 0.3s ease-in-out;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 button {
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 22px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
 }
 
 #yesBtn {
     background-color: #ff6699;
     color: white;
+    font-size: 22px;
 }
 
 #yesBtn:hover {
     background-color: #ff3366;
-}
-
-#noBtn {
-    background-color: #dddddd;
-    color: black;
-}
-
-#noBtn:hover {
-    background-color: #bbbbbb;
+    transform: scale(1.1);
 }
