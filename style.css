@@ -85,3 +85,8 @@ button {
 button:active {
     transform: scale(0.9);
 }
+html, body {
+    overflow: hidden; /* ป้องกันการเลื่อนเมื่อปุ่มเปลี่ยนขนาด */
+    height: 100vh; /* ทำให้หน้าคงที่ */
+    touch-action: manipulation; /* ป้องกัน gesture ที่อาจทำให้ขยับ */
+}
