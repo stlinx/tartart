@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Itim&display=swap');
 
 body {
     background: linear-gradient(to bottom, #ffccdd, #ffffff);
@@ -13,27 +13,30 @@ body {
     overflow: hidden;
 }
 
-/* หัวข้อ "Would you be my Valentine’s?" */
-h1 {
-    font-size: 50px;
-    font-family: 'Dancing Script', cursive;
+/* หัวข้อใหญ่สไตล์งานแต่ง */
+.title {
+    font-size: 60px;
+    font-family: 'Great Vibes', cursive;
     font-weight: bold;
-    color: #a52a2a;
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+    color: #8B0000;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+    border: 3px solid #8B0000;
+    padding: 15px 30px;
+    border-radius: 15px;
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* กล่องขาว */
+/* กล่องขาวใหญ่ขึ้น */
 .container {
     background: white;
-    padding: 40px;
+    padding: 60px;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 500px;
+    max-width: 800px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,23 +45,35 @@ h1 {
 
 /* คำถาม */
 #question {
-    font-size: 30px;
+    font-size: 32px;
     color: #444;
     margin-bottom: 30px;
-    transition: font-size 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+/* เอฟเฟคพิมพ์ทีละตัว */
+.typing-effect {
+    display: inline-block;
+    opacity: 0;
+    animation: typingFade 0.5s forwards;
+}
+
+@keyframes typingFade {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ปุ่ม */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
+    gap: 50px;
+    margin-top: 40px;
 }
 
 button {
-    font-size: 24px;
-    padding: 20px 40px;
+    font-size: 28px;
+    padding: 20px 50px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -85,24 +100,12 @@ button {
     background-color: #bbbbbb;
 }
 
-/* Shrinking & Expanding Effect */
-button:active {
-    transform: scale(1.2);
+/* เอฟเฟคขยาย/หด */
+@keyframes shrink {
+    to { transform: scale(0); }
 }
-
-/* ข้อความตอนจบ */
-#endMessage {
-    font-size: 40px;
-    font-weight: bold;
-    color: #ff3366;
-    margin-top: 20px;
-}
-
-/* ข้อความใต้สุด */
-#hint {
-    font-size: 16px;
-    color: gray;
-    margin-top: 10px;
+@keyframes expand {
+    to { transform: scale(1.5); }
 }
 
 /* เครดิต */
